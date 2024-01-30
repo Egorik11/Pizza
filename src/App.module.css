@@ -1,0 +1,24 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.content {
+	text-align: center;
+}
+
+.text_yellow {
+	color: rgb(234 179 8);
+}
+
+.title {
+	font-size: 30px;
+	line-height: 1.2;
+	margin-bottom: 20px;
+}
+
+.sub_title {
+	margin-bottom: 30px;
+}
