@@ -1,17 +1,19 @@
 import Form from '../Form/Form';
 import Input from '../Input/Input';
 
-import styles from './Header.module.css'
+import styles from './Header.module.css';
 
 function Header() {
-	return (
-		<div className={styles.header}>
-			<a className={styles.logo} href="/">Pizza Day</a>
+  return (
+    <div className={styles.header}>
+      <a className={styles.logo} href='/'>
+        Pizza Day
+      </a>
       <Form>
-        <Input placeholder='Search for the order #'/>
+        <Input placeholder='Search for the order #' />
       </Form>
-		</div>
-	)
+    </div>
+  );
 }
 
-export default Header
+export default Header;
