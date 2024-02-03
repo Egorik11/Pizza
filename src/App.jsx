@@ -5,7 +5,6 @@ import Header from './components/Header/Header';
 import Input from './components/Input/Input';
 import Button from './components/Button/Button';
 import PizzaList from './components/PizzaList/PizzaList';
-import PizzaItem from './components/PizzaItem/PizzaItem';
 
 import styles from './App.module.css';
 
@@ -24,11 +23,7 @@ function App() {
         <p className={styles.sub_title}>
           👋 Welcome! Please start by telling us your name:
         </p>
-        <PizzaList>
-          {dataPizzas.map((pizza) => {
-            return <PizzaItem key={pizza.id} pizza={pizza} />;
-          })}
-        </PizzaList>
+        <PizzaList dataPizzas={dataPizzas} />
         <Form>
           <Input type='text' placeholder='Your full name' />
           <Button>Login</Button>

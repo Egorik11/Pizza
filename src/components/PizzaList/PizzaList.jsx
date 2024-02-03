@@ -1,9 +1,15 @@
+import PizzaItem from '../PizzaItem/PizzaItem';
+
 import styles from './PizzaList.module.css';
 
-function PizzaList({ children }) {
+function PizzaList({ dataPizzas }) {
   return (
     <>
-      <ul className={styles.list}>{children}</ul>
+      <ul className={styles.list}>
+        {dataPizzas.map((pizza) => {
+          return <PizzaItem key={pizza.id} pizza={pizza} />;
+        })}
+      </ul>
     </>
   );
 }
