@@ -5,7 +5,7 @@ import styles from './PizzaItem.module.css';
 function PizzaItem({ pizza }) {
   return (
     <>
-      <li key={pizza.id} className={styles.pizza}>
+      <li className={styles.pizza}>
         <img src={pizza.imageUrl} className={styles.pizza__image} />
         <div className={styles.pizza__info}>
           <p className={styles.pizza__name}>{pizza.name}</p>
