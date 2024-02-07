@@ -1,3 +1,4 @@
+import React from 'react';
 import Form from '../Form/Form';
 import Input from '../Input/Input';
 
@@ -20,4 +21,4 @@ function Header({ value, onChange }) {
   );
 }
 
-export default Header;
+export default React.memo(Header);
