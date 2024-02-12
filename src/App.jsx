@@ -4,38 +4,57 @@ import dataPizzas from '../dataPizzas.json';
 
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
-import Input from './components/Input/Input';
-import Button from './components/Button/Button';
 import PizzaList from './components/PizzaList/PizzaList';
+import Sort from './components/Sort/Sort';
+import SearchInput from './components/SearchInput/SearchInput';
+import FilterPanel from './components/FilterPanel/FilterPanel';
 
 import styles from './App.module.css';
 
 function App() {
   const [valueInput, setValueInput] = useState('');
+  const [sortType, setSortType] = useState(0);
+  const [activeFilterItem, setActiveFilterItem] = useState('All');
 
-  const handleChange = (e) => {
+  const handleChangeInput = (e) => {
     setValueInput(e.target.value);
+  };
+
+  const handleChangeSort = (e) => {
+    setSortType(e.target.value);
+  };
+
+  const handleClickFilter = (item) => {
+    setActiveFilterItem(item);
   };
 
   return (
     <>
-      <Header value={valueInput} onChange={handleChange} />
+      <Header />
       <main className={styles.content}>
-        <h1 className={styles.title}>
-          The best pizza.
-          <br />
-          <span className={styles.text_yellow}>
-            Straight out of the oven, straight to you.
-          </span>
-        </h1>
-        <p className={styles.sub_title}>
-          👋 Welcome! Please start by telling us your name:
-        </p>
-        <PizzaList dataPizzas={dataPizzas} searchParams={valueInput} />
-        <Form>
-          <Input type='text' placeholder='Your full name' />
-          <Button>Login</Button>
-        </Form>
+        <h1 className={styles.title}>PIZZA</h1>
+        <div className={styles.sortPanel}>
+          <FilterPanel
+            activeItem={activeFilterItem}
+            onClick={handleClickFilter}
+          />
+          <div className={styles.searchSortPanel}>
+            <Form>
+              <SearchInput
+                value={valueInput}
+                onChange={handleChangeInput}
+                placeholder='Type name Pizza'
+              />
+            </Form>
+            <Sort value={sortType} onChangeSort={handleChangeSort} />
+          </div>
+        </div>
+        <PizzaList
+          dataPizzas={dataPizzas}
+          searchParams={valueInput}
+          sortType={sortType}
+          filterParams={activeFilterItem}
+        />
       </main>
     </>
   );

@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Margherita",
+    "type": "Vegetarian",
     "unitPrice": 12,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-1.jpg",
     "ingredients": ["tomato", "mozzarella", "basil"],
@@ -10,6 +11,7 @@
   {
     "id": 2,
     "name": "Capricciosa",
+    "type": "Vegetarian",
     "unitPrice": 14,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-2.jpg",
     "ingredients": ["tomato", "mozzarella", "ham", "mushrooms", "artichoke"],
@@ -18,6 +20,7 @@
   {
     "id": 3,
     "name": "Romana",
+    "type": "Meat",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-3.jpg",
     "ingredients": ["tomato", "mozzarella", "prosciutto"],
@@ -26,6 +29,7 @@
   {
     "id": 4,
     "name": "Prosciutto e Rucola",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-4.jpg",
     "ingredients": ["tomato", "mozzarella", "prosciutto", "arugula"],
@@ -34,6 +38,7 @@
   {
     "id": 5,
     "name": "Diavola",
+    "type": "With Seafood",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-5.jpg",
     "ingredients": ["tomato", "mozzarella", "spicy salami", "chili flakes"],
@@ -42,6 +47,7 @@
   {
     "id": 6,
     "name": "Vegetale",
+    "type": "Vegetarian",
     "unitPrice": 13,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-6.jpg",
     "ingredients": [
@@ -56,6 +62,7 @@
   {
     "id": 7,
     "name": "Napoli",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-7.jpg",
     "ingredients": ["tomato", "mozzarella", "fresh tomato", "basil"],
@@ -64,6 +71,7 @@
   {
     "id": 8,
     "name": "Siciliana",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-8.jpg",
     "ingredients": ["tomato", "mozzarella", "anchovies", "olives", "capers"],
@@ -72,6 +80,7 @@
   {
     "id": 9,
     "name": "Pepperoni",
+    "type": "Meat",
     "unitPrice": 14,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-9.jpg",
     "ingredients": ["tomato", "mozzarella", "pepperoni"],
@@ -80,6 +89,7 @@
   {
     "id": 10,
     "name": "Hawaiian",
+    "type": "Meat",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-10.jpg",
     "ingredients": ["tomato", "mozzarella", "pineapple", "ham"],
@@ -87,7 +97,8 @@
   },
   {
     "id": 11,
-    "name": "Spinach and Mushroom",
+    "name": "With ",
+    "type": "Meat",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-11.jpg",
     "ingredients": ["tomato", "mozzarella", "spinach", "mushrooms"],
@@ -96,6 +107,7 @@
   {
     "id": 12,
     "name": "Mediterranean",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-12.jpg",
     "ingredients": [
@@ -110,6 +122,7 @@
   {
     "id": 13,
     "name": "Greek",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-13.jpg",
     "ingredients": [
@@ -125,6 +138,7 @@
   {
     "id": 14,
     "name": "Abruzzese",
+    "type": "Vegetarian",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-14.jpg",
     "ingredients": ["tomato", "mozzarella", "prosciutto", "arugula"],
@@ -133,6 +147,7 @@
   {
     "id": 15,
     "name": "Pesto Chicken",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-15.jpg",
     "ingredients": [
@@ -147,6 +162,7 @@
   {
     "id": 16,
     "name": "Eggplant Parmesan",
+    "type": "Vegetarian",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-16.jpg",
     "ingredients": ["marinara", "mozzarella", "eggplant", "parmesan"],
@@ -155,6 +171,7 @@
   {
     "id": 17,
     "name": "Roasted Veggie",
+    "type": "Meat",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-17.jpg",
     "ingredients": [
@@ -170,6 +187,7 @@
   {
     "id": 18,
     "name": "Tofu and Mushroom",
+    "type": "With Seafood",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-18.jpg",
     "ingredients": [

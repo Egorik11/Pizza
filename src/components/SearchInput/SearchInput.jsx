@@ -1,6 +1,6 @@
-import styles from './Input.module.css';
+import styles from './SearchInput.module.css';
 
-function Input({ placeholder, value, onChange }) {
+function SearchInput({ placeholder, value, onChange }) {
   return (
     <>
       <input
@@ -13,4 +13,4 @@ function Input({ placeholder, value, onChange }) {
   );
 }
 
-export default Input;
+export default SearchInput;

@@ -1,0 +1,24 @@
+.filterList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filterItem {
+  cursor: pointer;
+  color: #1e4b3e;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-right: 16px;
+}
+
+.active {
+  background-color: #d9e9e4;
+}
+
+@media (max-width: 900px) {
+  .filterList {
+    justify-content: start;
+    padding-bottom: 20px;
+  }
+}

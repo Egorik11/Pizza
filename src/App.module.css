@@ -1,20 +1,37 @@
 .content {
-  max-width: 1440px;
+  max-width: 1280px;
   padding: 20px;
   margin: 0 auto;
   text-align: center;
 }
 
-.text_yellow {
-  color: rgb(234 179 8);
-}
-
 .title {
+  text-align: left;
+  font-weight: 600;
   font-size: 30px;
   line-height: 1.2;
   margin-bottom: 20px;
+  color: #1e4b3e;
+  text-transform: uppercase;
 }
 
-.sub_title {
-  margin-bottom: 30px;
+.sortPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listPanel {
+  display: flex;
+}
+
+.searchSortPanel {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .sortPanel {
+    display: block;
+  }
 }

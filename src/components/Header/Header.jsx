@@ -1,24 +1,17 @@
-import React from 'react';
-import Form from '../Form/Form';
-import Input from '../Input/Input';
+import Logo from '/src/assets/images/Logo.svg';
+import Cart from '/src/assets/images/Cart.svg';
 
 import styles from './Header.module.css';
 
-function Header({ value, onChange }) {
+function Header() {
   return (
     <div className={styles.header}>
-      <a className={styles.logo} href='/'>
-        Pizza Day
+      <a href=''>
+        <img src={Logo} alt='Pizza mania' />
       </a>
-      <Form>
-        <Input
-          value={value}
-          onChange={onChange}
-          placeholder='Search for the order #'
-        />
-      </Form>
+      <img src={Cart} alt='Shopping cart' />
     </div>
   );
 }
 
-export default React.memo(Header);
+export default Header;
