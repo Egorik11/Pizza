@@ -27,7 +27,7 @@
 
 .searchSortPanel {
   display: flex;
-  padding-bottom: 20px;
+  align-items: center;
 }
 
 @media (max-width: 900px) {
