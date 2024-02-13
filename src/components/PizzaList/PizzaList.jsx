@@ -25,6 +25,9 @@ function PizzaList({ dataPizzas, searchParams, sortType, filterParams }) {
         .slice()
         .sort((a, b) => b.unitPrice - a.unitPrice);
       break;
+    case '3':
+      sortedList = filteredSearch.filter((item) => item.soldOut);
+      break;
     default:
       sortedList = filteredSearch;
   }

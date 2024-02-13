@@ -14,6 +14,10 @@ function Sort({ value, onChangeSort }) {
       value: '2',
       sort: 'Price: highest first',
     },
+    {
+      value: '3',
+      sort: 'Show available',
+    },
   ];
 
   return (
