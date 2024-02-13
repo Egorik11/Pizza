@@ -1,0 +1,18 @@
+.button {
+  font-family: 'Mulish', sans-serif;
+  border: 1px solid #fff;
+  background-color: #d9e9e4;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.button:disabled:hover {
+  cursor: default;
+  background-color: #d9e9e4;
+}
+
+.button:hover {
+  background-color: #b8e0d2;
+}
