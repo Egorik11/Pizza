@@ -1,10 +1,12 @@
 import { useState } from 'react';
+
 import Button from '../Button/Button';
+import NumberInput from '../NumberInput/NumberInput';
 
 import styles from './PizzaItem.module.css';
 
 function PizzaItem({ pizza }) {
-  const [counterItem, setCounterItem] = useState(0);
+  const [counterItem, setCounterItem] = useState(1);
 
   const handleClickDecrement = () => {
     setCounterItem(counterItem - 1);
@@ -26,16 +28,11 @@ function PizzaItem({ pizza }) {
             <p className={styles.pizza__price}>€{pizza.unitPrice}</p>
             {pizza.soldOut ? (
               <>
-                <div>
-                  {counterItem === 0 ? (
-                    ''
-                  ) : (
-                    <Button onClick={handleClickDecrement}>-</Button>
-                  )}
-
-                  {counterItem}
-                  <Button onClick={handleClickIncrement}>+</Button>
-                </div>
+                <NumberInput
+                  value={counterItem}
+                  onClickDecrement={handleClickDecrement}
+                  onClickIncrement={handleClickIncrement}
+                />
                 <Button>Add to cart</Button>
               </>
             ) : (
