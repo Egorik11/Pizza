@@ -7,9 +7,8 @@ function PizzaItem({ pizza }) {
   const [counterItem, setCounterItem] = useState(0);
 
   const handleClickDecrement = () => {
-    counterItem > 0 ? setCounterItem(counterItem - 1) : 0;
+    setCounterItem(counterItem - 1);
   };
-
   const handleClickIncrement = () => {
     setCounterItem(counterItem + 1);
   };
@@ -28,7 +27,12 @@ function PizzaItem({ pizza }) {
             {pizza.soldOut ? (
               <>
                 <div>
-                  <Button onClick={handleClickDecrement}>-</Button>
+                  {counterItem === 0 ? (
+                    ''
+                  ) : (
+                    <Button onClick={handleClickDecrement}>-</Button>
+                  )}
+
                   {counterItem}
                   <Button onClick={handleClickIncrement}>+</Button>
                 </div>
