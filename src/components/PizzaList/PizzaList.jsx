@@ -35,7 +35,7 @@ function PizzaList({ dataPizzas, searchParams, sortType, filterParams }) {
   const showFilteredItems =
     filterParams !== 'All'
       ? sortedList.filter((item) => item.type === filterParams)
-      : dataPizzas;
+      : sortedList;
 
   return (
     <>
