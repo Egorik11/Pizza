@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import dataPizzas from '../dataPizzas.json';
+import { useEffect, useState } from 'react';
 
 import Form from './components/Form/Form';
 import Header from './components/Header/Header';
@@ -10,11 +8,35 @@ import SearchInput from './components/SearchInput/SearchInput';
 import FilterPanel from './components/FilterPanel/FilterPanel';
 
 import styles from './App.module.css';
+import Spinner from './components/Spinner/Spinner';
 
 function App() {
+  const [dataPizzas, setDataPizzas] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [valueInput, setValueInput] = useState('');
   const [sortType, setSortType] = useState(0);
   const [activeFilterItem, setActiveFilterItem] = useState('All');
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      try {
+        const response = await fetch(
+          'https://65ce5d66c715428e8b409705.mockapi.io/pizza',
+        );
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+        const data = await response.json();
+        setDataPizzas(data);
+      } catch (error) {
+        console.error(`Error ${error}`);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchApi();
+  }, []);
 
   const handleChangeInput = (e) => {
     setValueInput(e.target.value);
@@ -49,12 +71,16 @@ function App() {
             <Sort value={sortType} onChangeSort={handleChangeSort} />
           </div>
         </div>
-        <PizzaList
-          dataPizzas={dataPizzas}
-          searchParams={valueInput}
-          sortType={sortType}
-          filterParams={activeFilterItem}
-        />
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <PizzaList
+            dataPizzas={dataPizzas}
+            searchParams={valueInput}
+            sortType={sortType}
+            filterParams={activeFilterItem}
+          />
+        )}
       </main>
     </>
   );

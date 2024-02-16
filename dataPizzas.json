@@ -11,7 +11,7 @@
   {
     "id": 2,
     "name": "Capricciosa",
-    "type": "Vegetarian",
+    "type": "Meat",
     "unitPrice": 14,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-2.jpg",
     "ingredients": ["tomato", "mozzarella", "ham", "mushrooms", "artichoke"],
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Diavola",
-    "type": "With Seafood",
+    "type": "Meat",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-5.jpg",
     "ingredients": ["tomato", "mozzarella", "spicy salami", "chili flakes"],
@@ -97,8 +97,8 @@
   },
   {
     "id": 11,
-    "name": "With ",
-    "type": "Meat",
+    "name": "With mushrooms",
+    "type": "Vegetarian",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-11.jpg",
     "ingredients": ["tomato", "mozzarella", "spinach", "mushrooms"],
@@ -107,7 +107,7 @@
   {
     "id": 12,
     "name": "Mediterranean",
-    "type": "Meat",
+    "type": "Vegetarian",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-12.jpg",
     "ingredients": [
@@ -122,7 +122,7 @@
   {
     "id": 13,
     "name": "Greek",
-    "type": "Meat",
+    "type": "Vegetarian",
     "unitPrice": 16,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-13.jpg",
     "ingredients": [
@@ -171,7 +171,7 @@
   {
     "id": 17,
     "name": "Roasted Veggie",
-    "type": "Meat",
+    "type": "Vegetarian",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-17.jpg",
     "ingredients": [
@@ -187,7 +187,7 @@
   {
     "id": 18,
     "name": "Tofu and Mushroom",
-    "type": "With Seafood",
+    "type": "Vegetarian",
     "unitPrice": 15,
     "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-18.jpg",
     "ingredients": [
@@ -196,6 +196,24 @@
       "tofu",
       "mushrooms",
       "bell peppers"
+    ],
+    "soldOut": false
+  },
+  {
+    "id": 19,
+    "name": "Shrimp Delight",
+    "type": "With Seafood",
+    "unitPrice": 18,
+    "imageUrl": "https://dclaevazetcjjkrzczpc.supabase.co/storage/v1/object/public/pizzas/pizza-13.jpg",
+    "ingredients": [
+      "marinara",
+      "mozzarella",
+      "shrimp",
+      "onions",
+      "bell peppers",
+      "tomatoes",
+      "chili peppers",
+      "parsley"
     ],
     "soldOut": false
   }
