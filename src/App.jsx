@@ -6,9 +6,9 @@ import PizzaList from './components/PizzaList/PizzaList';
 import Sort from './components/Sort/Sort';
 import SearchInput from './components/SearchInput/SearchInput';
 import FilterPanel from './components/FilterPanel/FilterPanel';
+import Spinner from './components/Spinner/Spinner';
 
 import styles from './App.module.css';
-import Spinner from './components/Spinner/Spinner';
 
 function App() {
   const [dataPizzas, setDataPizzas] = useState([]);

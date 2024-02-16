@@ -32,9 +32,10 @@ function PizzaList({ dataPizzas, searchParams, sortType, filterParams }) {
       sortedList = filteredSearch;
   }
 
-  const showFilteredItems = sortedList.filter(
-    (item) => item.type !== filterParams,
-  );
+  const showFilteredItems =
+    filterParams !== 'All'
+      ? sortedList.filter((item) => item.type === filterParams)
+      : dataPizzas;
 
   return (
     <>
