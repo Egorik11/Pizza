@@ -1,5 +1,8 @@
 import Logo from '/src/assets/images/Logo.svg';
-import Cart from '/src/assets/images/Cart.svg';
+import Person from '/src/assets/images/Person.svg';
+
+import Button from '../Button/Button';
+import Cart from '../Cart/Cart';
 
 import styles from './Header.module.css';
 
@@ -9,7 +12,10 @@ function Header() {
       <a href=''>
         <img src={Logo} alt='Pizza mania' />
       </a>
-      <img src={Cart} alt='Shopping cart' />
+      <Button modeHeaderStyle>
+        <img src={Person} alt='Person' />
+      </Button>
+      <Cart />
     </div>
   );
 }

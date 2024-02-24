@@ -1,88 +1,31 @@
-import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Form from './components/Form/Form';
 import Header from './components/Header/Header';
-import PizzaList from './components/PizzaList/PizzaList';
-import Sort from './components/Sort/Sort';
-import SearchInput from './components/SearchInput/SearchInput';
-import FilterPanel from './components/FilterPanel/FilterPanel';
-import Spinner from './components/Spinner/Spinner';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Login from './pages/Login';
+import Cart from './pages/Cart';
+import { createContext, useState } from 'react';
 
-import styles from './App.module.css';
+export const CartContext = createContext(null);
+export const BadgeContext = createContext(null);
 
 function App() {
-  const [dataPizzas, setDataPizzas] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [valueInput, setValueInput] = useState('');
-  const [sortType, setSortType] = useState(0);
-  const [activeFilterItem, setActiveFilterItem] = useState('All');
-
-  useEffect(() => {
-    const fetchApi = async () => {
-      try {
-        const response = await fetch(
-          'https://65ce5d66c715428e8b409705.mockapi.io/pizza',
-        );
-        if (!response.ok) {
-          throw new Error(`Error: ${response.statusText}`);
-        }
-        const data = await response.json();
-        setDataPizzas(data);
-      } catch (error) {
-        console.error(`Error ${error}`);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchApi();
-  }, []);
-
-  const handleChangeInput = (e) => {
-    setValueInput(e.target.value);
-  };
-
-  const handleChangeSort = (e) => {
-    setSortType(e.target.value);
-  };
-
-  const handleClickFilter = (item) => {
-    setActiveFilterItem(item);
-  };
+  const [cartItem, setCartItem] = useState([]);
+  const [countBadge, setCountBadge] = useState(0);
 
   return (
-    <>
-      <Header />
-      <main className={styles.content}>
-        <h1 className={styles.title}>PIZZA</h1>
-        <div className={styles.sortPanel}>
-          <FilterPanel
-            activeItem={activeFilterItem}
-            onClick={handleClickFilter}
-          />
-          <div className={styles.searchSortPanel}>
-            <Form>
-              <SearchInput
-                value={valueInput}
-                onChange={handleChangeInput}
-                placeholder='Type name Pizza'
-              />
-            </Form>
-            <Sort value={sortType} onChangeSort={handleChangeSort} />
-          </div>
-        </div>
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <PizzaList
-            dataPizzas={dataPizzas}
-            searchParams={valueInput}
-            sortType={sortType}
-            filterParams={activeFilterItem}
-          />
-        )}
-      </main>
-    </>
+    <CartContext.Provider value={{ cartItem, setCartItem }}>
+      <BadgeContext.Provider value={{ countBadge, setCountBadge }}>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </BadgeContext.Provider>
+    </CartContext.Provider>
   );
 }
 

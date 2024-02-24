@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { BadgeContext, CartContext } from '../../App';
 
 import Button from '../Button/Button';
 import NumberInput from '../NumberInput/NumberInput';
@@ -7,12 +8,20 @@ import styles from './PizzaItem.module.css';
 
 function PizzaItem({ pizza }) {
   const [counterItem, setCounterItem] = useState(1);
+  const { setCartItem } = useContext(CartContext);
+  const { setCountBadge } = useContext(BadgeContext);
 
   const handleClickDecrement = () => {
     setCounterItem(counterItem - 1);
   };
+
   const handleClickIncrement = () => {
     setCounterItem(counterItem + 1);
+  };
+
+  const handleClickToCart = (pizza) => {
+    setCartItem((prevItem) => [...prevItem, pizza]);
+    setCountBadge((prevCount) => prevCount + counterItem);
   };
 
   return (
@@ -33,7 +42,9 @@ function PizzaItem({ pizza }) {
                   onClickDecrement={handleClickDecrement}
                   onClickIncrement={handleClickIncrement}
                 />
-                <Button>Add to cart</Button>
+                <Button onClick={() => handleClickToCart(pizza)}>
+                  Add to cart
+                </Button>
               </>
             ) : (
               'Sold out'
