@@ -1,0 +1,16 @@
+.cart {
+  position: relative;
+  font-family: 'Mulish';
+  border: 0;
+  padding: 8px 10px;
+  background-color: rgba(232, 252, 231, 0.2);
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: rgba(30, 75, 62, 1);
+}
+
+.cart:hover {
+  transition: 0.3s;
+  background-color: rgba(189, 206, 188, 0.616);
+}
