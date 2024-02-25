@@ -8,7 +8,7 @@ import styles from './PizzaItem.module.css';
 
 function PizzaItem({ pizza }) {
   const [counterItem, setCounterItem] = useState(1);
-  const { setCartItem } = useContext(CartContext);
+  const { cartItem, setCartItem } = useContext(CartContext);
   const { setCountBadge } = useContext(BadgeContext);
 
   const handleClickDecrement = () => {
@@ -20,6 +20,12 @@ function PizzaItem({ pizza }) {
   };
 
   const handleClickToCart = (pizza) => {
+    const checkDuplicated = cartItem.findIndex((item) => item.id === pizza.id);
+
+    if (checkDuplicated !== -1) {
+      return;
+    }
+
     setCartItem((prevItem) => [...prevItem, pizza]);
     setCountBadge((prevCount) => prevCount + counterItem);
   };

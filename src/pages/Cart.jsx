@@ -1,7 +1,5 @@
 import {
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   Container,
@@ -12,6 +10,7 @@ import {
 import { useContext } from 'react';
 import { CartContext } from '../App';
 import { NavLink } from 'react-router-dom';
+import Button from '../components/Button/Button';
 
 function Cart() {
   const { cartItem } = useContext(CartContext);
@@ -20,7 +19,7 @@ function Cart() {
     <Container>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {cartItem.map((item) => (
-          <Card key={item.id} sx={{ width: 300 }}>
+          <Card key={item.id} sx={{ width: 250 }}>
             <CardMedia
               sx={{ height: 140 }}
               image={item.imageUrl}
@@ -28,17 +27,12 @@ function Cart() {
             />
             <CardContent>
               <Typography gutterBottom variant='h5' component='div'>
-                {item.name} {/* Используйте данные из объекта item */}
+                {item.name}
               </Typography>
               <Typography variant='body2' color='text.secondary'>
-                {/* Используйте данные из объекта item */}
                 {item.ingredients.join(', ')}
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size='small'>Share</Button>
-              <Button size='small'>Learn More</Button>
-            </CardActions>
           </Card>
         ))}
       </Grid>
@@ -46,12 +40,12 @@ function Cart() {
         <>
           <Typography>You don't have an item in your cart yet.</Typography>
           <NavLink to={'/'}>
-            <Button>go home</Button>
+            <Button>Go home</Button>
           </NavLink>
         </>
       ) : (
         <NavLink to={'/'}>
-          <Button>go home</Button>
+          <Button>Go home</Button>
         </NavLink>
       )}
     </Container>

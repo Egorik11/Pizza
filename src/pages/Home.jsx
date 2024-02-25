@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import FilterPanel from '../components/FilterPanel/FilterPanel';
 import Form from '../components/Form/Form';
 import PizzaList from '../components/PizzaList/PizzaList';

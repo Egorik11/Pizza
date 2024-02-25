@@ -1,15 +1,17 @@
+import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { BadgeContext } from '../../App';
+
 import { Badge, IconButton } from '@mui/material';
 
 import CartImg from '/src/assets/images/Cart.svg';
 
 import styles from './Cart.module.css';
-import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
-import { BadgeContext } from '../../App';
 
 function Cart() {
   const { countBadge } = useContext(BadgeContext);
-  
+
   return (
     <>
       <NavLink to={'/cart'}>
