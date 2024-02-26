@@ -1,17 +1,51 @@
-import styles from './NumberInput.module.css'
+import { useReducer } from 'react';
 
-function NumberInput({ value, onClickDecrement, onClickIncrement }) {
+import styles from './NumberInput.module.css';
+
+const initialState = 1;
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    case 'RESET':
+      return initialState;
+
+    default:
+      return state;
+  }
+};
+
+function NumberInput({ onClick }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleIncrement = () => {
+    dispatch({
+      type: 'INCREMENT',
+    });
+    onClick(state + 1);
+  };
+
+  const handleDecrement = () => {
+    dispatch({
+      type: 'DECREMENT',
+    });
+    onClick(state - 1);
+  };
+
   return (
     <>
       <button
         className={styles.button}
-        disabled={value <= 1}
-        onClick={onClickDecrement}
+        disabled={state <= 1}
+        onClick={handleDecrement}
       >
         -
       </button>
-      <p>{value}</p>
-      <button className={styles.button} onClick={onClickIncrement}>
+      <p>{state}</p>
+      <button className={styles.button} onClick={handleIncrement}>
         +
       </button>
     </>

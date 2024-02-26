@@ -11,14 +11,6 @@ function PizzaItem({ pizza }) {
   const { cartItem, setCartItem } = useContext(CartContext);
   const { setCountBadge } = useContext(BadgeContext);
 
-  const handleClickDecrement = () => {
-    setCounterItem(counterItem - 1);
-  };
-
-  const handleClickIncrement = () => {
-    setCounterItem(counterItem + 1);
-  };
-
   const handleClickToCart = (pizza) => {
     const checkDuplicated = cartItem.findIndex((item) => item.id === pizza.id);
 
@@ -43,11 +35,7 @@ function PizzaItem({ pizza }) {
             <p className={styles.pizza__price}>€{pizza.unitPrice}</p>
             {pizza.soldOut ? (
               <>
-                <NumberInput
-                  value={counterItem}
-                  onClickDecrement={handleClickDecrement}
-                  onClickIncrement={handleClickIncrement}
-                />
+                <NumberInput onClick={setCounterItem} />
                 <Button onClick={() => handleClickToCart(pizza)}>
                   Add to cart
                 </Button>
