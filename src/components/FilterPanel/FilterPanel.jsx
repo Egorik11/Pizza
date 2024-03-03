@@ -1,6 +1,6 @@
 import styles from './FilterPanel.module.css';
 
-function FilterPanel({ activeItem, onClick }) {
+const FilterPanel = ({ activeItem, onClick }) => {
   const filterItems = ['All', 'Meat', 'With Seafood', 'Vegetarian'];
 
   return (
@@ -22,6 +22,6 @@ function FilterPanel({ activeItem, onClick }) {
       })}
     </ul>
   );
-}
+};
 
 export default FilterPanel;

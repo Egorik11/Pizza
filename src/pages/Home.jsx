@@ -9,7 +9,7 @@ import Spinner from '../components/Spinner/Spinner';
 
 import styles from '../App.module.css';
 
-function Home() {
+const Home = () => {
   const [dataPizzas, setDataPizzas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [valueInput, setValueInput] = useState('');
@@ -81,6 +81,6 @@ function Home() {
       </main>
     </>
   );
-}
+};
 
 export default Home;

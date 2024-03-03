@@ -1,26 +1,21 @@
-import { useContext, useState } from 'react';
-import { BadgeContext, CartContext } from '../../App';
-
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartProvider';
 import Button from '../Button/Button';
 import NumberInput from '../NumberInput/NumberInput';
 
 import styles from './PizzaItem.module.css';
 
-function PizzaItem({ pizza }) {
-  const [counterItem, setCounterItem] = useState(1);
-  const { cartItem, setCartItem } = useContext(CartContext);
-  const { setCountBadge } = useContext(BadgeContext);
+const PizzaItem = ({ pizza }) => {
+  const { state, dispatch } = useContext(CartContext);
 
-  const handleClickToCart = (pizza) => {
-    const checkDuplicated = cartItem.findIndex((item) => item.id === pizza.id);
-
-    if (checkDuplicated !== -1) {
-      return;
-    }
-
-    setCartItem((prevItem) => [...prevItem, pizza]);
-    setCountBadge((prevCount) => prevCount + counterItem);
+  const handleClick = () => {
+    dispatch({
+      type: 'ADD_PIZZA',
+      payload: pizza,
+    });
   };
+
+  const isExist = state.items.find((item) => item.id === pizza.id);
 
   return (
     <>
@@ -34,12 +29,11 @@ function PizzaItem({ pizza }) {
           <div className={styles.pizza__actions}>
             <p className={styles.pizza__price}>€{pizza.unitPrice}</p>
             {pizza.soldOut ? (
-              <>
-                <NumberInput onClick={setCounterItem} />
-                <Button onClick={() => handleClickToCart(pizza)}>
-                  Add to cart
-                </Button>
-              </>
+              isExist ? (
+                <NumberInput state={state} pizza={pizza} dispatch={dispatch} />
+              ) : (
+                <Button onClick={handleClick}>Add to cart</Button>
+              )
             ) : (
               'Sold out'
             )}
@@ -48,6 +42,6 @@ function PizzaItem({ pizza }) {
       </li>
     </>
   );
-}
+};
 
 export default PizzaItem;

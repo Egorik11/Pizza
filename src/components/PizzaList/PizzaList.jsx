@@ -2,7 +2,7 @@ import PizzaItem from '../PizzaItem/PizzaItem';
 
 import styles from './PizzaList.module.css';
 
-function PizzaList({ dataPizzas, searchParams, sortType, filterParams }) {
+const PizzaList = ({ dataPizzas, searchParams, sortType, filterParams }) => {
   const filteredSearch = searchParams
     ? dataPizzas.filter((pizza) =>
         pizza.name.toLowerCase().includes(searchParams.toLowerCase()),
@@ -46,6 +46,6 @@ function PizzaList({ dataPizzas, searchParams, sortType, filterParams }) {
       </ul>
     </>
   );
-}
+};
 
 export default PizzaList;

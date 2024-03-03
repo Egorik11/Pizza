@@ -1,6 +1,6 @@
 import styles from './Button.module.css';
 
-function Button({ children, onClick, modeHeaderStyle, type }) {
+const Button = ({ children, onClick, modeHeaderStyle, type }) => {
   return (
     <>
       <button
@@ -12,6 +12,6 @@ function Button({ children, onClick, modeHeaderStyle, type }) {
       </button>
     </>
   );
-}
+};
 
 export default Button;

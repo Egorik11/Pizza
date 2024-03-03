@@ -1,6 +1,6 @@
 import styles from './Sort.module.css';
 
-function Sort({ value, onChangeSort }) {
+const Sort = ({ value, onChangeSort }) => {
   const data = [
     {
       value: '0',
@@ -33,6 +33,6 @@ function Sort({ value, onChangeSort }) {
       ))}
     </select>
   );
-}
+};
 
 export default Sort;

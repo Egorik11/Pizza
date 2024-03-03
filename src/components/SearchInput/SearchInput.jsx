@@ -1,6 +1,6 @@
 import styles from './SearchInput.module.css';
 
-function SearchInput({ placeholder, value, onChange }) {
+const SearchInput = ({ placeholder, value, onChange }) => {
   return (
     <>
       <input
@@ -11,6 +11,6 @@ function SearchInput({ placeholder, value, onChange }) {
       ></input>
     </>
   );
-}
+};
 
 export default SearchInput;

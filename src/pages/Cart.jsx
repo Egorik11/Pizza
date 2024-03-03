@@ -1,4 +1,5 @@
 import {
+  Box,
   Card,
   CardContent,
   CardMedia,
@@ -7,18 +8,25 @@ import {
   Typography,
 } from '@mui/material';
 
-import { useContext } from 'react';
-import { CartContext } from '../App';
 import { NavLink } from 'react-router-dom';
 import Button from '../components/Button/Button';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartProvider';
 
-function Cart() {
-  const { cartItem } = useContext(CartContext);
+const Cart = () => {
+  const { state, dispatch } = useContext(CartContext);
+
+  const handleClickDeletePizza = (pizza) => {
+    dispatch({
+      type: 'DELETE_PIZZA',
+      payload: pizza,
+    });
+  };
 
   return (
     <Container>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {cartItem.map((item) => (
+        {state.items.map((item) => (
           <Card key={item.id} sx={{ width: 250 }}>
             <CardMedia
               sx={{ height: 140 }}
@@ -32,11 +40,14 @@ function Cart() {
               <Typography variant='body2' color='text.secondary'>
                 {item.ingredients.join(', ')}
               </Typography>
+              <Button onClick={() => handleClickDeletePizza(item)}>
+                Delete Pizza
+              </Button>
             </CardContent>
           </Card>
         ))}
       </Grid>
-      {cartItem.length === 0 ? (
+      {state.items.length === 0 ? (
         <>
           <Typography>You don't have an item in your cart yet.</Typography>
           <NavLink to={'/'}>
@@ -50,6 +61,6 @@ function Cart() {
       )}
     </Container>
   );
-}
+};
 
 export default Cart;

@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import { v4 as uuidv4 } from 'uuid';
 
 import { Drawer, TextField, Typography } from '@mui/material';
@@ -8,12 +10,11 @@ import Logo from '/src/assets/images/Logo.svg';
 import Person from '/src/assets/images/Person.svg';
 import Button from '../Button/Button';
 import Cart from '../Cart/Cart';
-
 import { LoginContext } from '../../App';
 
 import styles from './Header.module.css';
 
-function Header() {
+const Header = () => {
   const [open, setOpen] = useState(false);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -54,9 +55,9 @@ function Header() {
 
   return (
     <div className={styles.header}>
-      <a href=''>
+      <NavLink to={'/'}>
         <img src={Logo} alt='Pizza mania' />
-      </a>
+      </NavLink>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <Button onClick={toggleDrawer} modeHeaderStyle>
           <img src={Person} alt='Person' />
@@ -108,6 +109,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;
