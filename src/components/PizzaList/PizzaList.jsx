@@ -1,3 +1,4 @@
+import { Box, Grid } from '@mui/material';
 import PizzaItem from '../PizzaItem/PizzaItem';
 
 import styles from './PizzaList.module.css';
@@ -39,11 +40,17 @@ const PizzaList = ({ dataPizzas, searchParams, sortType, filterParams }) => {
 
   return (
     <>
-      <ul className={styles.list}>
-        {showFilteredItems.map((pizza) => {
-          return <PizzaItem key={pizza.id} pizza={pizza} />;
-        })}
-      </ul>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid
+          container
+          spacing={{ xs: 2, md: 3 }}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+        >
+          {showFilteredItems.map((pizza) => {
+            return <PizzaItem key={pizza.id} pizza={pizza} />;
+          })}
+        </Grid>
+      </Box>
     </>
   );
 };
