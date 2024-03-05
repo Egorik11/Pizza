@@ -26,7 +26,7 @@ const NumberInput = ({ state, pizza, dispatch }) => {
   };
 
   return (
-    <>
+    <div className={styles.block}>
       <button
         onClick={handleClickDecrement}
         className={styles.button}
@@ -34,11 +34,11 @@ const NumberInput = ({ state, pizza, dispatch }) => {
       >
         -
       </button>
-      <p>{getQuantityById}</p>
+      <p className={styles.text}>{getQuantityById}</p>
       <button onClick={handleClickIncrement} className={styles.button}>
         +
       </button>
-    </>
+    </div>
   );
 };
 

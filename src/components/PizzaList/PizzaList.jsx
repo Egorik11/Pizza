@@ -1,8 +1,6 @@
 import { Box, Grid } from '@mui/material';
 import PizzaItem from '../PizzaItem/PizzaItem';
 
-import styles from './PizzaList.module.css';
-
 const PizzaList = ({ dataPizzas, searchParams, sortType, filterParams }) => {
   const filteredSearch = searchParams
     ? dataPizzas.filter((pizza) =>
