@@ -51,7 +51,7 @@ const Cart = () => {
                 >
                   <CardMedia
                     component='img'
-                    sx={{ width: 140 }}
+                    sx={{ width: 100 }}
                     image={pizza.imageUrl}
                     alt='Live from space album cover'
                   />

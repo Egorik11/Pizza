@@ -71,7 +71,7 @@ const Login = () => {
           </Grid>
           <Grid item xs={12}>
             <Button type='submit' variant='contained' color='primary'>
-              Отправить
+              Submit
             </Button>
           </Grid>
           <Grid sx={{ display: 'flex', alignItems: 'center' }}>

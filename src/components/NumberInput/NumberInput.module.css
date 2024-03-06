@@ -16,6 +16,7 @@
   height: 40px;
   padding: 0 15px;
   cursor: pointer;
+  color: rgba(30, 75, 62, 1);
 }
 
 .button:disabled:hover {
