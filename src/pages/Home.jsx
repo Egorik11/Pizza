@@ -8,7 +8,7 @@ import Sort from '../components/Sort/Sort';
 import Spinner from '../components/Spinner/Spinner';
 
 import styles from '../App.module.css';
-import { Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 
 const Home = () => {
   const [dataPizzas, setDataPizzas] = useState([]);
@@ -58,16 +58,14 @@ const Home = () => {
             activeItem={activeFilterItem}
             onClick={handleClickFilter}
           />
-          <div className={styles.searchSortPanel}>
-            <Form>
-              <SearchInput
-                value={valueInput}
-                onChange={handleChangeInput}
-                placeholder='Type name Pizza'
-              />
-            </Form>
+          <Form>
+            <SearchInput
+              value={valueInput}
+              onChange={handleChangeInput}
+              placeholder='Type name Pizza'
+            />
             <Sort value={sortType} onChangeSort={handleChangeSort} />
-          </div>
+          </Form>
         </div>
         {isLoading ? (
           <Spinner />

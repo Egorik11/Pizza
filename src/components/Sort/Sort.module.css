@@ -4,12 +4,16 @@
   border: 1px solid #eaeaef;
   background-color: #fff;
   border-radius: 4px;
-  margin-left: 16px;
-  padding: 10px;
+  padding: 8px;
   font-size: 14px;
-  width: 180px;
+  width: 175px;
 }
 
 .select:focus-visible {
   outline: none !important;
+}
+
+.select::placeholder {
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
 }

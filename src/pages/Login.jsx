@@ -1,16 +1,16 @@
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import Button from '../components/Button/Button';
+import { loginSchema } from '../loginSchema/loginSchema';
+
 import {
-  Box,
   Checkbox,
   Container,
   Grid,
   TextField,
   Typography,
 } from '@mui/material';
-import Button from '../components/Button/Button';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { loginSchema } from '../loginSchema/loginSchema';
-import { useState } from 'react';
 
 const Login = () => {
   const [priority, setPriority] = useState(false);
@@ -76,7 +76,7 @@ const Login = () => {
           </Grid>
           <Grid sx={{ display: 'flex', alignItems: 'center' }}>
             <Checkbox value={priority} onChange={handleChange} />
-            <label>Want to yo give your order priority?</label>
+            <label>Allow data processing?</label>
           </Grid>
         </Grid>
       </form>
