@@ -31,13 +31,12 @@ const PizzaItem = ({ pizza }) => {
 
   return (
     <>
-      <Grid item xs={6} sx={{ padding: '0 0 16px 24px !important' }}>
+      <Grid item xs={6}>
         <Card
           sx={{
             display: 'flex',
             boxShadow: 'none',
             borderRadius: '8px',
-            minWidth: '420px',
           }}
         >
           <CardMedia
@@ -47,7 +46,9 @@ const PizzaItem = ({ pizza }) => {
             alt='Live from space album cover'
           />
           <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-            <CardContent sx={{ flex: '1 0 auto', textAlign: 'left' }}>
+            <CardContent
+              sx={{ flex: '1 0 auto', textAlign: 'left', padding: '8px' }}
+            >
               <Typography
                 sx={{ display: 'flex', fontFamily: 'Mulish' }}
                 component='div'
@@ -64,8 +65,8 @@ const PizzaItem = ({ pizza }) => {
               >
                 {showAllIngredients
                   ? pizza.ingredients.join(', ')
-                  : pizza.ingredients.length > 6
-                  ? `${pizza.ingredients.slice(0, 6).join(', ')} ...`
+                  : pizza.ingredients.length > 4
+                  ? `${pizza.ingredients.slice(0, 4).join(', ')} ...`
                   : pizza.ingredients.join(', ')}
               </Typography>
             </CardContent>

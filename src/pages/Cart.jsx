@@ -31,21 +31,16 @@ const Cart = () => {
 
   return (
     <>
-      <Container>
+      <Container sx={{ padding: '0 10px!important' }}>
         <Grid
           container
           spacing={{ xs: 2, md: 3 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
-          sx={{ paddingTop: '20px' }}
+          sx={{ margin: '0px' }}
         >
           {state.items.map((pizza) => {
             return (
-              <Grid
-                key={pizza.id}
-                item
-                xs={6}
-                sx={{ padding: '0 0 16px 24px !important' }}
-              >
+              <Grid key={pizza.id} item xs={6}>
                 <Card
                   sx={{
                     display: 'flex',
@@ -84,8 +79,8 @@ const Cart = () => {
                       >
                         {showAllIngredients
                           ? pizza.ingredients.join(', ')
-                          : pizza.ingredients.length > 6
-                          ? `${pizza.ingredients.slice(0, 6).join(', ')} ...`
+                          : pizza.ingredients.length > 4
+                          ? `${pizza.ingredients.slice(0, 4).join(', ')} ...`
                           : pizza.ingredients.join(', ')}
                       </Typography>
                     </CardContent>

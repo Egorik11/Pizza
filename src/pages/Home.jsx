@@ -8,6 +8,7 @@ import Sort from '../components/Sort/Sort';
 import Spinner from '../components/Spinner/Spinner';
 
 import styles from '../App.module.css';
+import { Container } from '@mui/material';
 
 const Home = () => {
   const [dataPizzas, setDataPizzas] = useState([]);
@@ -50,7 +51,7 @@ const Home = () => {
   };
   return (
     <>
-      <main className={styles.content}>
+      <Container sx={{ padding: '0 10px', margin: '0 auto' }}>
         <h1 className={styles.title}>PIZZA</h1>
         <div className={styles.sortPanel}>
           <FilterPanel
@@ -78,7 +79,8 @@ const Home = () => {
             filterParams={activeFilterItem}
           />
         )}
-      </main>
+      </Container>
+      ;
     </>
   );
 };

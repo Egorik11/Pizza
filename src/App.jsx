@@ -1,26 +1,22 @@
-import { createContext, useState } from 'react';
-
 import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
-
-export const LoginContext = createContext(null);
+import Login from './pages/Login';
 
 const App = () => {
-  const [userLogin, setUserLogin] = useState([]);
-
   return (
-    <LoginContext.Provider value={{ userLogin, setUserLogin }}>
+    <>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/login' element={<Login />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
-    </LoginContext.Provider>
+    </>
   );
 };
 
