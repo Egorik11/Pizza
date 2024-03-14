@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartProvider';
 import Button from '../Button/Button';
-import NumberInput from '../NumberInput/NumberInput';
+import CounterPizza from '../CounterPizza/CounterPizza';
 
 import {
   Box,
@@ -83,7 +83,7 @@ const PizzaItem = ({ pizza }) => {
               </Typography>
               {pizza.soldOut ? (
                 isExist ? (
-                  <NumberInput
+                  <CounterPizza
                     state={state}
                     pizza={pizza}
                     dispatch={dispatch}

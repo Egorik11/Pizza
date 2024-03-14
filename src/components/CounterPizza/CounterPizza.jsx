@@ -1,6 +1,6 @@
-import styles from './NumberInput.module.css';
+import styles from './CounterPizza.module.css';
 
-const NumberInput = ({ state, pizza, dispatch }) => {
+const CounterPizza = ({ state, pizza, dispatch }) => {
   const getQuantityById =
     state.items.find((item) => item.id === pizza.id)?.quantity || 0;
 
@@ -42,4 +42,4 @@ const NumberInput = ({ state, pizza, dispatch }) => {
   );
 };
 
-export default NumberInput;
+export default CounterPizza;

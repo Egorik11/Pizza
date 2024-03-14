@@ -12,7 +12,7 @@ import { NavLink } from 'react-router-dom';
 import Button from '../components/Button/Button';
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartProvider';
-import NumberInput from '../components/NumberInput/NumberInput';
+import CounterPizza from '../components/CounterPizza/CounterPizza';
 
 const Cart = () => {
   const { state, dispatch } = useContext(CartContext);
@@ -98,7 +98,7 @@ const Cart = () => {
                       >
                         €{pizza.unitPrice}
                       </Typography>
-                      <NumberInput
+                      <CounterPizza
                         state={state}
                         pizza={pizza}
                         dispatch={dispatch}
