@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Button from '../components/Button/Button';
 import { loginSchema } from '../loginSchema/loginSchema';
@@ -16,7 +16,7 @@ const Login = () => {
   const [priority, setPriority] = useState(false);
 
   const {
-    register,
+    control,
     handleSubmit,
     reset,
     formState: { errors },
@@ -43,30 +43,50 @@ const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label='Name'
-              {...register('firstName', {})}
-              error={!!errors.firstName}
-              helperText={errors.firstName ? errors.firstName.message : ''}
+            <Controller
+              name='firstName'
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  fullWidth
+                  label='Name'
+                  {...field}
+                  error={!!errors.firstName}
+                  helperText={errors.firstName ? errors.firstName.message : ''}
+                />
+              )}
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label='Phone number'
-              {...register('numberPhone')}
-              error={!!errors.numberPhone}
-              helperText={errors.numberPhone ? errors.numberPhone.message : ''}
+            <Controller
+              name='numberPhone'
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  fullWidth
+                  label='Phone number'
+                  {...field}
+                  error={!!errors.numberPhone}
+                  helperText={
+                    errors.numberPhone ? errors.numberPhone.message : ''
+                  }
+                />
+              )}
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label='Address'
-              {...register('address', {})}
-              error={!!errors.address}
-              helperText={errors.address ? errors.address.message : ''}
+            <Controller
+              name='address'
+              control={control}
+              render={({ field }) => (
+                <TextField
+                  fullWidth
+                  label='Address'
+                  {...field}
+                  error={!!errors.address}
+                  helperText={errors.address ? errors.address.message : ''}
+                />
+              )}
             />
           </Grid>
           <Grid item xs={12}>
