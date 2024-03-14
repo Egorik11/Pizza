@@ -1,21 +1,25 @@
+import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
+import Spinner from './components/Spinner/Spinner';
 import Header from './components/Header/Header';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Cart from './pages/Cart';
-import Login from './pages/Login';
+
+const HomeLazy = lazy(() => import('./pages/Home'));
+const CartLazy = lazy(() => import('./pages/Cart'));
+const LoginLazy = lazy(() => import('./pages/Login'));
+const NotFoundLazy = lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path='/' element={<HomeLazy />} />
+          <Route path='/cart' element={<CartLazy />} />
+          <Route path='/login' element={<LoginLazy />} />
+          <Route path='*' element={<NotFoundLazy />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };
